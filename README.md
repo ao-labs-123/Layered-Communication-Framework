@@ -98,6 +98,7 @@ active_axis if score >= max_score × 0.6
 よければ確認お願いします
 
 ### 出力
+
 A_score: 0.2
 B_score: 0.3
 C_score: 0.7
