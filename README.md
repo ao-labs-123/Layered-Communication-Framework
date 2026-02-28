@@ -72,3 +72,73 @@ Layered Communication Framework は、人間の発話を「多層構造」とし
 ### 多層判定
 
 最大スコアを基準とし、相対閾値 0.6 を用いる：
+active_axis if score >= max_score × 0.6
+これにより、
+
+- 単層型（single）
+- 二層型（dual）
+- 三層型（triple）
+
+を判定する。
+
+### バランス指数
+
+三軸の標準偏差を balance_index として算出する。
+
+- 低い値：均衡的発話
+- 高い値：偏重型発話
+
+これにより、人間的発話の構造的偏りを定量化する。
+
+---
+
+## 入出力例
+
+### 入力
+よければ確認お願いします
+
+### 出力
+A_score: 0.2
+B_score: 0.3
+C_score: 0.7
+active_axes: [‘B’, ‘C’]
+structure_type: dual
+balance_index: 0.21
+
+---
+
+## リポジトリ構成
+src/layered_communication/
+lexicon/
+rules/
+scoring/
+analyzer.py
+
+data/
+demo_input.csv
+demo_output.csv
+
+---
+
+## 本フレームワークの位置づけ
+
+本プロジェクトは高精度分類器ではない。
+
+目的は、
+
+- 軽量な設計
+- 透明なルール
+- 高い構造把握能力
+
+を両立させることである。
+
+人間らしさを「意味」ではなく「構造の重なり」として捉える試みである。
+
+---
+
+## 今後の展開
+
+- コーパスを用いた多層出現率分析
+- 構造クラスタリング
+- 他言語への拡張
+- AI生成文との構造比較
