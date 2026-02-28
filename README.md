@@ -108,6 +108,7 @@ balance_index: 0.21
 ---
 
 ## リポジトリ構成
+
 src/layered_communication/
 lexicon/
 rules/
